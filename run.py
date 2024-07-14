@@ -38,6 +38,9 @@ merch_lat = st.number_input("Merchant Latitude")
 merch_long = st.number_input("Merchant Longitude")
 days = st.selectbox("Days", ["Monday", "Tuesday", ...])
 
+# Define the categorical columns
+cat_cols = ["gender", "state", "category", "job", "days"]
+
 # Add a button
 if st.button("Predict"):
     # Create a dataframe with the input values
@@ -68,8 +71,10 @@ if st.button("Predict"):
     })
 
     # One-hot encode the categorical columns
-    input_df = one_hot_encoded_cat.transform(input_df[["gender", "state", "category", "job", "days"]])
+    #input_df = one_hot_encoded_cat.transform(input_df[["gender", "state", "category", "job", "days"]])
     #one_hot_encoded_cat = pd.get_dummies(input_df, columns=['gender', 'state', 'category', 'job', 'days'])
+    # Call the one_hot_encoded_cat function with the input data and categorical columns
+    input_df = one_hot_encoded_cat_func(input_df, cat_cols)
 
     # Make a prediction using the model
     prediction = model.predict(input_df)
