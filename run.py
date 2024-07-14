@@ -6,10 +6,9 @@ import base64
 from sklearn.linear_model import LogisticRegression
 #from sklearn.preprocessing import StandardScaler, LabelEncoder
 
-# Load the model, scaler, and encoders
+# Load the model and encoders
 model = joblib.load("LogisticRegression.joblib")
-scaler = joblib.load('scaler.joblib')
-label_encoders = joblib.load('label_encoders.joblib')
+one_hot_encoded_cat = joblib.load("one_hot_encoded_cat.joblib")
 
 # Create a Streamlit app
 st.title("Fraud Prediction App")
@@ -69,7 +68,8 @@ if st.button("Predict"):
     })
 
     # One-hot encode the categorical columns
-    one_hot_encoded_cat = pd.get_dummies(input_df, columns=['gender', 'state', 'category', 'job', 'days'])
+    input_df = one_hot_encoded_cat.transform(input_df[["gender", "state", "category", "job", "days"]])
+    #one_hot_encoded_cat = pd.get_dummies(input_df, columns=['gender', 'state', 'category', 'job', 'days'])
 
     # Make a prediction using the model
     prediction = model.predict(input_df)
