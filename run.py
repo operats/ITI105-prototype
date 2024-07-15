@@ -92,6 +92,7 @@ if st.button("Predict"):
     input_df.drop(columns=['cc_num', 'city', 'dob', 'first', 'last', 'lat', 'long', 'merch_lat', 'merch_long', 'merchant', 'street', 'trans_num', 'unix_time', 'zip'], inplace=True)
 
     # Add the OHE categories
+    input_df['state_AR'] = [0,]
     input_df['state_AZ'] = [0,]
     input_df['state_CA'] = [0,]
     input_df['state_HI'] = [0,]
@@ -163,6 +164,9 @@ if st.button("Predict"):
     # Call the one_hot_encoded_cat function with the input data and categorical columns
     #input_df = one_hot_encoded_cat_func(input_df, cat_cols)
 
+    # Remove extra unused columns
+    input_df.drop(columns=['days_Wednesday'], inplace=True)
+    
     # Make a prediction using the model
     prediction = model.predict(input_df)
 
