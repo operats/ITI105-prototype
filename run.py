@@ -16,6 +16,7 @@ st.title("Fraud Prediction App")
 # Add input fields for each column
 #index = st.text_input("Unique Identifier")
 trans_date_trans_time = st.date_input("Transaction DateTime")
+
 cc_num = st.text_input("Credit Card Number")
 merchant = st.text_input("Merchant Name")
 category = st.selectbox("Category of Merchant", ["Category 1", "Category 2", ...])
@@ -69,6 +70,14 @@ if st.button("Predict"):
         "merch_long": [merch_long],
         "days": [days]
     })
+
+    # Process trans_date_trans_time
+    input_df['time'] = pd.to_datetime(input_df['trans_date_trans_time'])
+    input_df['days'] = input_df['time'].dt.day_name()
+    input_df['hour'] = input_df['time'].dt.hour
+    # Delete the original category columns
+    input_df.drop(columns=['trans_date_trans_time']), inplace=True)
+    #input_df.drop(columns=['gender', 'state', 'category', 'job', 'days'], inplace=True)
 
     # One-hot encode the categorical columns
     #input_df = one_hot_encoded_cat.transform(input_df[["gender", "state", "category", "job", "days"]])
