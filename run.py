@@ -117,7 +117,12 @@ if st.button("Predict"):
     input_df['job_Administrator'] = [0,]
     input_df['job_Administrator, arts'] = [0,]
     input_df['job_Administrator, charities/voluntary organisations'] = [0,] 
-
+    input_df['job_Administrator, education'] = [0,]
+    input_df['job_Administrator, local government'] = [0,]
+    input_df['job_Advertising account executive'] = [0,]
+    input_df['job_Advertising account planner'] = [0,]
+    input_df['job_Advertising copywriter'] = [0,]
+    
     # One-hot encode the categorical columns
     #input_df = one_hot_encoded_cat.transform(input_df[["gender", "state", "category", "job", "days"]])
     input_df = pd.get_dummies(input_df, columns=['gender', 'state', 'category', 'job', 'days'])
