@@ -80,8 +80,10 @@ if st.button("Predict"):
     input_df['date'] = pd.to_datetime(input_df['trans_date'])
     input_df['days'] = input_df['date'].dt.day_name()
     #input_df['trans_time'] = pd.to_datetime(input_df['trans_time']).dt.hour
-    input_df['hour'] = pd.to_datetime(input_df['trans_time']).dt.hour
+    #input_df['hour'] = pd.to_datetime(input_df['trans_time']).dt.hour
     #input_df['hour'] = input_df['trans_time'].dt.hour
+    #input_df['hour'] = input_df['trans_time'].apply(lambda x: x.hour)
+    input_df['hour'] = input_df['trans_time'][0].hour
 
     # Delete the original category columns
     input_df.drop(columns=['trans_date','trans_time','date'], inplace=True)
