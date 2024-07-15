@@ -76,7 +76,7 @@ if st.button("Predict"):
     input_df['days'] = input_df['time'].dt.day_name()
     input_df['hour'] = input_df['time'].dt.hour
     # Delete the original category columns
-    input_df.drop(columns=['trans_date_trans_time']), inplace=True)
+    input_df.drop(columns=['trans_date_trans_time'], inplace=True)
     #input_df.drop(columns=['gender', 'state', 'category', 'job', 'days'], inplace=True)
 
     # One-hot encode the categorical columns
