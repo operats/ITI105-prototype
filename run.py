@@ -37,7 +37,7 @@ trans_num = st.text_input("Transaction Number")
 unix_time = st.number_input("UNIX Time")
 merch_lat = st.number_input("Merchant Latitude")
 merch_long = st.number_input("Merchant Longitude")
-days = st.selectbox("Days", ["Monday", "Tuesday", ...])
+#days = st.selectbox("Days", ["Monday", "Tuesday", ...])
 
 # Define the categorical columns
 cat_cols = ["gender", "state", "category", "job", "days"]
