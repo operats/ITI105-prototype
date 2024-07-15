@@ -19,6 +19,7 @@ st.title("NYP ITI105 Fraud Prediction App")
 #index = st.text_input("Unique Identifier")
 trans_date = st.date_input("Transaction Date", value=datetime.date(2019, 1, 2))
 trans_time = st.time_input("Transaction Time", value=datetime.time(1,6,37))
+#trans_hour = st.numer_input("Transaction Hour", value=1)
 cc_num = st.text_input("Credit Card Number", value="4613314721966")
 merchant = st.text_input("Merchant Name", value="fraud_Rutherford-Mertz")
 #category = st.selectbox("Category of Merchant", ["grocery_pos", "dining_pos", ...], value="grocery_pos")
@@ -78,9 +79,10 @@ if st.button("Predict"):
     # Process trans_date_trans_time
     input_df['date'] = pd.to_datetime(input_df['trans_date'])
     input_df['days'] = input_df['date'].dt.day_name()
-    input_df['hour'] = input_df['trans_time'].dt.hour
+    input_df['time'] = pd.to_datetime(input_df['trans_time'])
+    input_df['hour'] = input_df['time'].dt.hour
     # Delete the original category columns
-    input_df.drop(columns=['trans_date','trans_time','date'], inplace=True)
+    input_df.drop(columns=['trans_date','trans_time','date','time'], inplace=True)
     #input_df.drop(columns=['gender', 'state', 'category', 'job', 'days'], inplace=True)
 
     # One-hot encode the categorical columns
