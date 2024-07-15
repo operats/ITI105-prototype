@@ -172,9 +172,9 @@ if st.button("Predict"):
 
     # Display the prediction
     st.write("Prediction:", prediction)
-    if prediction[0] == 1:
-        st.error('According to the model, this is a fraud!')
+#    if prediction[0] == 1:
+#        st.error('According to the model, this is a fraud!')
         #st.markdown(f'<img src="data:image/gif;base64,{data_url_no}" alt="cat gif">', unsafe_allow_html=True)
-    elif prediction[0] == 0:
-        st.success('Congratulations! This transaction is legitimate.')
+#    elif prediction[0] == 0:
+#        st.success('Congratulations! This transaction is legitimate.')
         #st.markdown(f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">', unsafe_allow_html=True)
