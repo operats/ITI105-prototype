@@ -8,7 +8,7 @@ from sklearn.linear_model import LogisticRegression
 
 # Load the model and encoders
 model = joblib.load("LogisticRegression.joblib")
-one_hot_encoded_cat = joblib.load("one_hot_encoded_cat.joblib")
+#one_hot_encoded_cat = joblib.load("one_hot_encoded_cat.joblib")
 
 # Create a Streamlit app
 st.title("Fraud Prediction App")
