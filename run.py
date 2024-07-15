@@ -89,7 +89,7 @@ if st.button("Predict"):
     input_df.drop(columns=['trans_date','trans_time','date'], inplace=True)
     #input_df.drop(columns=['trans_date','trans_time','date','time'], inplace=True)
     #input_df.drop(columns=['gender', 'state', 'category', 'job', 'days'], inplace=True)
-    input_df.drop(columns=['cc_num', 'city', 'dob', 'first', 'last', 'lat', 'long', 'merch_lat', 'merch_long', 'merchant'], inplace=True)
+    input_df.drop(columns=['cc_num', 'city', 'dob', 'first', 'last', 'lat', 'long', 'merch_lat', 'merch_long', 'merchant', 'street', 'trans_num', 'unix_time', 'zip'], inplace=True)
 
     # Add the OHE categories
     input_df['category_food_dining'] = [0,]
@@ -97,6 +97,11 @@ if st.button("Predict"):
     input_df['category_grocery_net'] = [0,]
     input_df['category_health_fitness'] = [0,]
     input_df['category_home'] = [0,]
+    input_df['category_kids_pets'] = [0,]
+    input_df['category_misc_net'] = [0,]
+    input_df['category_misc_pos'] = [0,]
+    input_df['category_personal_care'] = [0,]
+    input_df['category_shopping_net'] = [0,]
     
     # One-hot encode the categorical columns
     #input_df = one_hot_encoded_cat.transform(input_df[["gender", "state", "category", "job", "days"]])
