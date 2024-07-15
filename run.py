@@ -67,8 +67,8 @@ if st.button("Predict"):
         "trans_num": [trans_num],
         "unix_time": [unix_time],
         "merch_lat": [merch_lat],
-        "merch_long": [merch_long],
-        "days": [days]
+        "merch_long": [merch_long]
+#        "days": [days]
     })
 
     # Process trans_date_trans_time
