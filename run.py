@@ -102,6 +102,11 @@ if st.button("Predict"):
     input_df['category_misc_pos'] = [0,]
     input_df['category_personal_care'] = [0,]
     input_df['category_shopping_net'] = [0,]
+    input_df['category_shopping_pos'] = [0,]
+    input_df['category_travel'] = [0,]
+    input_df['days_Monday'] = [0,]
+    input_df['days_Saturday'] = [0,]
+    input_df['days_Sunday'] = [0,]
     
     # One-hot encode the categorical columns
     #input_df = one_hot_encoded_cat.transform(input_df[["gender", "state", "category", "job", "days"]])
