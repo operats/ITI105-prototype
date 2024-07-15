@@ -9,7 +9,7 @@ from sklearn.linear_model import LogisticRegression
 #from sklearn.preprocessing import StandardScaler, LabelEncoder
 
 # Load the model and encoders
-model = joblib.load("LogisticRegression.joblib")
+model = joblib.load("LogisticRegression_small.joblib")
 #one_hot_encoded_cat = joblib.load("one_hot_encoded_cat.joblib")
 
 # Create a Streamlit app
