@@ -14,7 +14,7 @@ model = joblib.load("LogisticRegression.joblib")
 st.title("Fraud Prediction App")
 
 # Add input fields for each column
-index = st.text_input("Unique Identifier")
+#index = st.text_input("Unique Identifier")
 trans_date_trans_time = st.date_input("Transaction DateTime")
 cc_num = st.text_input("Credit Card Number")
 merchant = st.text_input("Merchant Name")
@@ -45,7 +45,7 @@ cat_cols = ["gender", "state", "category", "job", "days"]
 if st.button("Predict"):
     # Create a dataframe with the input values
     input_df = pd.DataFrame({
-        "index": [index],
+#        "index": [index],
         "trans_date_trans_time": [trans_date_trans_time],
         "cc_num": [cc_num],
         "merchant": [merchant],
