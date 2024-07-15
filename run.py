@@ -72,9 +72,9 @@ if st.button("Predict"):
 
     # One-hot encode the categorical columns
     #input_df = one_hot_encoded_cat.transform(input_df[["gender", "state", "category", "job", "days"]])
-    #one_hot_encoded_cat = pd.get_dummies(input_df, columns=['gender', 'state', 'category', 'job', 'days'])
+    input_df = pd.get_dummies(input_df, columns=['gender', 'state', 'category', 'job', 'days'])
     # Call the one_hot_encoded_cat function with the input data and categorical columns
-    input_df = one_hot_encoded_cat_func(input_df, cat_cols)
+    #input_df = one_hot_encoded_cat_func(input_df, cat_cols)
 
     # Make a prediction using the model
     prediction = model.predict(input_df)
