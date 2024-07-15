@@ -11,12 +11,12 @@ model = joblib.load("LogisticRegression.joblib")
 #one_hot_encoded_cat = joblib.load("one_hot_encoded_cat.joblib")
 
 # Create a Streamlit app
-st.title("Fraud Prediction App")
+st.title("NYP ITI105 Fraud Prediction App")
 
 # Add input fields for each column
 #index = st.text_input("Unique Identifier")
-trans_date_trans_time = st.date_input("Transaction DateTime")
-
+trans_date = st.date_input("Transaction Date")
+trans_time = st.time_input("Transaction Time")
 cc_num = st.text_input("Credit Card Number")
 merchant = st.text_input("Merchant Name")
 category = st.selectbox("Category of Merchant", ["Category 1", "Category 2", ...])
@@ -47,7 +47,8 @@ if st.button("Predict"):
     # Create a dataframe with the input values
     input_df = pd.DataFrame({
 #        "index": [index],
-        "trans_date_trans_time": [trans_date_trans_time],
+        "trans_date": [trans_date],
+        "trans_time": [trans_time],
         "cc_num": [cc_num],
         "merchant": [merchant],
         "category": [category],
@@ -72,11 +73,11 @@ if st.button("Predict"):
     })
 
     # Process trans_date_trans_time
-    input_df['time'] = pd.to_datetime(input_df['trans_date_trans_time'])
-    input_df['days'] = input_df['time'].dt.day_name()
-    input_df['hour'] = input_df['time'].dt.hour
+    input_df['date'] = pd.to_datetime(input_df['trans_date'])
+    input_df['days'] = input_df['date'].dt.day_name()
+    input_df['hour'] = input_df['trans_time'].dt.hour
     # Delete the original category columns
-    input_df.drop(columns=['trans_date_trans_time'], inplace=True)
+    input_df.drop(columns=['trans_date','trans_time','date'], inplace=True)
     #input_df.drop(columns=['gender', 'state', 'category', 'job', 'days'], inplace=True)
 
     # One-hot encode the categorical columns
