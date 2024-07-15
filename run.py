@@ -89,6 +89,7 @@ if st.button("Predict"):
     input_df.drop(columns=['trans_date','trans_time','date'], inplace=True)
     #input_df.drop(columns=['trans_date','trans_time','date','time'], inplace=True)
     #input_df.drop(columns=['gender', 'state', 'category', 'job', 'days'], inplace=True)
+    input_df.drop(columns=['cc_num', 'city', 'dob', 'first', 'last'], inplace=True)
 
     # One-hot encode the categorical columns
     #input_df = one_hot_encoded_cat.transform(input_df[["gender", "state", "category", "job", "days"]])
