@@ -79,7 +79,7 @@ if st.button("Predict"):
     # Process trans_date_trans_time
     input_df['date'] = pd.to_datetime(input_df['trans_date'])
     input_df['days'] = input_df['date'].dt.day_name()
-    input_df['hour'] = input_df['trans_time'].hour
+    input_df['hour'] = input_df['trans_time'].dt.hour
 
     # Delete the original category columns
     input_df.drop(columns=['trans_date','trans_time','date'], inplace=True)
