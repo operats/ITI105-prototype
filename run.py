@@ -15,7 +15,7 @@ st.title("NYP ITI105 Fraud Prediction App")
 
 # Add input fields for each column
 #index = st.text_input("Unique Identifier")
-trans_date = st.date_input("Transaction Date", value=["2019/01/02"], format="YYYY/MM/DD")
+trans_date = st.date_input("Transaction Date", value=datetime.date(2019, 1, 2))
 trans_time = st.time_input("Transaction Time", value="01:06:37")
 cc_num = st.text_input("Credit Card Number", value="4613314721966")
 merchant = st.text_input("Merchant Name", value="fraud_Rutherford-Mertz")
