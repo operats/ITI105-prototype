@@ -13,7 +13,7 @@ model = joblib.load("LogisticRegression_small.joblib")
 #one_hot_encoded_cat = joblib.load("one_hot_encoded_cat.joblib")
 
 # Create a Streamlit app
-st.title("NYP ITI105 Fraud Prediction App")
+st.title("NYP ITI105 Fraud Prediction App v2")
 
 # Add input fields for each column
 #index = st.text_input("Unique Identifier")
