@@ -18,8 +18,8 @@ if app_mode == 'Home':
     #st.image('hipster_loan-1.jpg')
     st.write('App created by Team 7')
     st.write('Select at the sidebar:')
-    st.write('* Single: Enter the inputs yourself and make a prediction.')
-    st.write('* Batch:  Upload a csv file and make multiple predictions.')
+    st.write('* **Single**: Enter the inputs yourself and make a prediction.')
+    st.write('* **Batch**:  Upload a csv file and make multiple predictions.')
 
 elif app_mode == 'Batch':
 
