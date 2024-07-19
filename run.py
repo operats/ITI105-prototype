@@ -20,7 +20,8 @@ with tab1:
     #st.image('hipster_loan-1.jpg')
     st.write('App created by Team 7')
     st.divider()
-    st.subheader('Select at the sidebar:')
+    #st.subheader('Select at the sidebar:')
+    st.subheader('Select a tab from the top menu:')
     st.write('* **Single**: Enter the inputs yourself and make a prediction.')
     st.write('* **Batch**:  Upload a csv file and make multiple predictions.')
 
