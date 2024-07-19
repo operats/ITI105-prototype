@@ -12,8 +12,10 @@ from sklearn.linear_model import LogisticRegression
 model = joblib.load("LogisticRegression_small.joblib")
 #one_hot_encoded_cat = joblib.load("one_hot_encoded_cat.joblib")
 
-app_mode = st.sidebar.selectbox('Select Page', ['Home', 'Single', 'Batch'])
-if app_mode == 'Home':
+#app_mode = st.sidebar.selectbox('Select Page', ['Home', 'Single', 'Batch'])
+tab1, tab2, tab3 = st.tabs(["Home", "Batch", "Single"])
+#if app_mode == 'Home':
+with tab1: 
     st.title('NYP ITI105 Fraud Prediction App')
     #st.image('hipster_loan-1.jpg')
     st.write('App created by Team 7')
@@ -22,7 +24,8 @@ if app_mode == 'Home':
     st.write('* **Single**: Enter the inputs yourself and make a prediction.')
     st.write('* **Batch**:  Upload a csv file and make multiple predictions.')
 
-elif app_mode == 'Batch':
+#elif app_mode == 'Batch':
+with tab2:
 
     # Create a Streamlit app
     st.title("Fraud Prediction by batch upload")
@@ -33,7 +36,8 @@ elif app_mode == 'Batch':
         batch_df = pd.read_csv(uploaded_file)
         st.write(batch_df)
 
-elif app_mode == 'Single':
+#elif app_mode == 'Single':
+with tab3:
 
     # Create a Streamlit app
     st.title("Interactive Single Fraud Prediction")
