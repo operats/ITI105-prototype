@@ -27,7 +27,7 @@ elif app_mode == 'Batch':
     st.title("Fraud Prediction by batch upload")
     st.write('Only csv files are supported')
     
-    uploaded_file = st.file_uploader("Choose a csv file")
+    uploaded_file = st.file_uploader("Choose a csv file", type='csv')
     if uploaded_file is not None: 
         batch_df = pd.read_csv(uploaded_file)
         st.write(batch_df)
