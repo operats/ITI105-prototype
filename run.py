@@ -25,7 +25,7 @@ with tab1:
     st.write('* **Single**: Enter the inputs yourself and make a prediction.')
     st.write('* **Batch**:  Upload a csv file and make multiple predictions.')
     st.divider()
-    st.image("Fraud alert.png")
+    st.image("Fraud alert.png")  # screenshot from www.theusbport.com
 
 #elif app_mode == 'Batch':
 with tab3:
