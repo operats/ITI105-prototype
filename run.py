@@ -13,7 +13,7 @@ model = joblib.load("LogisticRegression_small.joblib")
 #one_hot_encoded_cat = joblib.load("one_hot_encoded_cat.joblib")
 
 #app_mode = st.sidebar.selectbox('Select Page', ['Home', 'Single', 'Batch'])
-tab1, tab2, tab3 = st.tabs(["Home", "Batch", "Single"])
+tab1, tab2, tab3 = st.tabs(["Home", "Single", "Batch"])
 #if app_mode == 'Home':
 with tab1: 
     st.title('NYP ITI105 Fraud Prediction App')
@@ -26,7 +26,7 @@ with tab1:
     st.write('* **Batch**:  Upload a csv file and make multiple predictions.')
 
 #elif app_mode == 'Batch':
-with tab2:
+with tab3:
 
     # Create a Streamlit app
     st.title("Fraud Prediction by batch upload")
@@ -38,7 +38,7 @@ with tab2:
         st.write(batch_df)
 
 #elif app_mode == 'Single':
-with tab3:
+with tab2:
 
     # Create a Streamlit app
     st.title("Interactive Single Fraud Prediction")
