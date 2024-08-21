@@ -13,7 +13,7 @@ import gdown
 # On Gdrive side, file must be shared with "Anyone with link" when getting the url link.
 url = "https://drive.google.com/uc?id=1i9thE9-T83kRDgu-frgSYExk4GlKUDtO"
 output = "model.pkl"
-gdown.download(url, output, quiet=False)
+#gdown.download(url, output, quiet=False)
 
 # Load the RF model
 #model_rf = joblib.load("model.pkl")
