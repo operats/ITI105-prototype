@@ -11,7 +11,7 @@ import gdown
 
 # model file is too large.  Download directly from Gdrive.  
 # On Gdrive side, file must be shared with "Anyone with link" when getting the url link.
-url = "https://drive.google.com/uc?id=1i9thE9-T83kRDgu-frgSYExk4GlKUDtO"
+url = "https://drive.google.com/file/d/1i9thE9-T83kRDgu-frgSYExk4GlKUDtO/view?usp=sharing"
 output = "model.pkl"
 gdown.download(url, output)
 
