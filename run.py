@@ -27,7 +27,7 @@ def is_file_ready(file_path):
     return os.path.isfile(file_path) and os.path.getsize(file_path) > 0
 
 # Download model and wait for it to be ready
-download_model(url, output)
+#download_model(url, output)
 
 # Wait until the file is available and non-empty
 timeout = 60  # seconds
@@ -41,14 +41,14 @@ while not is_file_ready(output):
 # Load the model
 try:
     with open("model.pkl", "rb") as f:
-        model_rf = pickle.load(f)
+#        model_rf = pickle.load(f)
     print("Model loaded successfully using pickle.")
 except Exception as e:
     print(f"An error occurred while loading the model with pickle: {e}")
 
 
 # Load the RF model
-model_rf = joblib.load("model.pkl")
+#model_rf = joblib.load("model.pkl")
 
 # Load the model and encoders
 model = joblib.load("LogisticRegression_small.joblib")
