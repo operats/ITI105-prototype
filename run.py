@@ -13,7 +13,37 @@ import gdown
 # On Gdrive side, file must be shared with "Anyone with link" when getting the url link.
 url = "https://drive.google.com/file/d/1i9thE9-T83kRDgu-frgSYExk4GlKUDtO/view?usp=sharing"
 output = "model.pkl"
-gdown.download(url, output)
+#gdown.download(url, output)
+
+# Download the model
+def download_model(url, output):
+    gdown.download(url, output, quiet=False)
+
+# Check if file exists and is non-empty
+def is_file_ready(file_path):
+    return os.path.isfile(file_path) and os.path.getsize(file_path) > 0
+
+# Download model and wait for it to be ready
+download_model(url, output)
+
+# Wait until the file is available and non-empty
+timeout = 60  # seconds
+start_time = time.time()
+
+while not is_file_ready(output):
+    if time.time() - start_time > timeout:
+        raise RuntimeError("Model file download timed out.")
+    time.sleep(1)  # Check every second
+
+# Load the model
+try:
+    model = joblib.load(output)
+    print("Model loaded successfully.")
+except KeyError as e:
+    print(f"KeyError encountered: {e}")
+except Exception as e:
+    print(f"An error occurred while loading the model: {e}")
+
 
 # Load the RF model
 model_rf = joblib.load("model.pkl")
