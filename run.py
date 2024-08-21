@@ -6,7 +6,17 @@ from datetime import date, timedelta
 import joblib
 import base64
 from sklearn.linear_model import LogisticRegression
+import gdown
 #from sklearn.preprocessing import StandardScaler, LabelEncoder
+
+# model file is too large.  Download directly from Gdrive.  
+# On Gdrive side, file must be shared with "Anyone with link" when getting the url link.
+url = "https://drive.google.com/uc?id=1i9thE9-T83kRDgu-frgSYExk4GlKUDtO"
+output = "model.pkl"
+gdown.download(url, output, quiet=False)
+
+# Load the RF model
+model_rf = joblib.load("model.pkl")
 
 # Load the model and encoders
 model = joblib.load("LogisticRegression_small.joblib")
