@@ -16,7 +16,7 @@ output = "model.pkl"
 gdown.download(url, output)
 
 # Load the RF model
-model_rf = joblib.load("model.pkl")
+model_rf = joblib.load("/mount/src/iti105-prototype/model.pkl")
 
 # Load the model and encoders
 model = joblib.load("LogisticRegression_small.joblib")
