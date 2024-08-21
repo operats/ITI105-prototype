@@ -9,6 +9,7 @@ from sklearn.linear_model import LogisticRegression
 import gdown
 import os
 import time
+import pickle
 #from sklearn.preprocessing import StandardScaler, LabelEncoder
 
 # model file is too large.  Download directly from Gdrive.  
@@ -39,12 +40,11 @@ while not is_file_ready(output):
 
 # Load the model
 try:
-    model = joblib.load(output)
-    print("Model loaded successfully.")
-except KeyError as e:
-    print(f"KeyError encountered: {e}")
+    with open("model.pkl", "rb") as f:
+        model_rf = pickle.load(f)
+    print("Model loaded successfully using pickle.")
 except Exception as e:
-    print(f"An error occurred while loading the model: {e}")
+    print(f"An error occurred while loading the model with pickle: {e}")
 
 
 # Load the RF model
