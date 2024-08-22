@@ -21,11 +21,11 @@ output = "model.pkl"
 # Load the RF model
 #model_rf = joblib.load("model.pkl")
 
-#import mlflow
-#logged_model = 'runs:/c1e28ac9c65d49a7a45d4a77491abd3a/model'
+import mlflow
+logged_model = 'runs:/c1e28ac9c65d49a7a45d4a77491abd3a/model'
 
 # Load model as a PyFuncModel.
-#loaded_model = mlflow.pyfunc.load_model(logged_model)
+loaded_model = mlflow.pyfunc.load_model(logged_model)
 
 
 # Load the model and encoders
