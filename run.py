@@ -10,22 +10,22 @@ import gdown
 import os
 import time
 import pickle
+import mlflow
 #from sklearn.preprocessing import StandardScaler, LabelEncoder
 
+#----- Using Google drive shared link -----
 # model file is too large.  Download directly from Gdrive.  
 # On Gdrive side, file must be shared with "Anyone with link" when getting the url link.
-url = "https://drive.google.com/file/d/1i9thE9-T83kRDgu-frgSYExk4GlKUDtO/view?usp=sharing"
-output = "model.pkl"
+#url = "https://drive.google.com/file/d/1i9thE9-T83kRDgu-frgSYExk4GlKUDtO/view?usp=sharing"
+#output = "model.pkl"
 #gdown.download(url, output)
-
 # Load the RF model
 #model_rf = joblib.load("model.pkl")
 
-import mlflow
-logged_model = 'runs:/c1e28ac9c65d49a7a45d4a77491abd3a/model'
-
+#----- Using MLFlow codes -----
+#logged_model = 'runs:/c1e28ac9c65d49a7a45d4a77491abd3a/model'
 # Load model as a PyFuncModel.
-loaded_model = mlflow.pyfunc.load_model(logged_model)
+#loaded_model = mlflow.pyfunc.load_model(logged_model)
 
 
 # Load the model and encoders
